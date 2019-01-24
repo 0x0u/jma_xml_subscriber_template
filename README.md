@@ -1,5 +1,5 @@
 # jma_xml_subscriber_template
-FlaskとGAE(GoogleAppEngine)を使って気象庁XMLを受信するためのサブスクライバテンプレートです。以下の手順に従ってデプロイから気象庁への登録申請をします。
+FlaskとGAE(GoogleAppEngine)を使って気象庁XMLを受信するためのサブスクライバテンプレートです。以下の手順でGAEへのデプロイから気象庁への登録申請方法を紹介します。
 
 ## 手順
 
