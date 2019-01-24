@@ -37,7 +37,7 @@ gcloud app deploy app.yaml
 ```
 
 #### 4. 申請する
-[ユーザー登録について](http://xml.kishou.go.jp/open_trial/registration.html)に従い申請します。`登録様式`をダウンロードして、2で設定したVERIFY_TOKENと3でデプロイしたサブスクライバURL(https://プロジェクトID.appspot.com/sub)、その他を記述してメールに添付して送信すれば申請完了です。
+[ユーザー登録について](http://xml.kishou.go.jp/open_trial/registration.html)に従い申請します。登録様式をダウンロードして、2で設定したVERIFY_TOKENと3でデプロイしたサブスクライバURL(https\://プロジェクトID.appspot.com/sub)、その他を記述してメールに添付して送信すれば申請完了です。
 
 
 ## 参考
