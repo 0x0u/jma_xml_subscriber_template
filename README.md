@@ -10,8 +10,9 @@ FlaskとGAE(GoogleAppEngine)を使って気象庁XMLを受信するためのサ�
 gitからcloneします。
 
 ```
-git clone https://github.com/0x0u/jma_xml_subscriber_template.git
-cd jma_xml_subscriber_template
+$ git clone https://github.com/0x0u/jma_xml_subscriber_template.git
+
+$ cd jma_xml_subscriber_template
 ```        
 
 中身は以下の様になっています。今回紹介したソースコード（main.py）とGAEにデプロイするために必要なファイル群です。
@@ -36,7 +37,7 @@ VERIFY_TOKEN: "hogehoge"
 GAEとgcloudコマンドが実行できるようにしておくのが前提条件です。以下のコマンドでデプロイします。
 
 ```
-gcloud app deploy app.yaml
+$ gcloud app deploy app.yaml
 ```
 
 #### 4. 申請する
