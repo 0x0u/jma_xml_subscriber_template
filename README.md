@@ -15,14 +15,14 @@ $ git clone https://github.com/0x0u/jma_xml_subscriber_template.git
 $ cd jma_xml_subscriber_template
 ```        
 
-中身は以下の様になっています。今回紹介したソースコード（main.py）とGAEにデプロイするために必要なファイル群です。
+中身は以下のようになっています。今回紹介したソースコード（main.py）とGAEにデプロイするために必要なファイル群です。
 
 ```
 jma_xml_subscriber_template
     ├── app.yaml(GAE設定ファイル)
     ├── main.py
-    ├── requirements.txt(インストールが必要な外部モジュール)
-    ├── .gcloudignore(GAPにデプロイする際に除外するファイルを指定するためファイル)
+    ├── requirements.txt(インストールが必要な外部モジュールを書く)
+    ├── .gcloudignore(GAEにデプロイする際に除外するファイルを書く)
     └── .gitignore
 ```
 
