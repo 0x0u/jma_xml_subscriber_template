@@ -1,0 +1,6 @@
+.gcloudignore
+.git
+.gitignore
+README.md
+__pycache__/
+/setup.cfg
