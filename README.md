@@ -21,9 +21,9 @@ $ cd jma_xml_subscriber_template
 jma_xml_subscriber_template
     ├── app.yaml(GAE設定ファイル)
     ├── main.py
-    ├──requirements.txt(インストールが必要な外部モジュール)
-    ├──.gcloudignore(GAPにデプロイする際に除外するファイルを指定するためファイル)
-    └──.gitignore
+    ├── requirements.txt(インストールが必要な外部モジュール)
+    ├── .gcloudignore(GAPにデプロイする際に除外するファイルを指定するためファイル)
+    └── .gitignore
 ```
 
 #### 2. VERIFY_TOKENを設定する
