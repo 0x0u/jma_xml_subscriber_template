@@ -1,4 +1,7 @@
 # jma_xml_subscriber_template
+
+[![License](https://img.shields.io/badge/license-JMA-blue.svg)](https://www.jma.go.jp/jma/kishou/info/coment.html)
+
 FlaskとGAE(GoogleAppEngine)を使って気象庁XMLを受信するためのサブスクライバテンプレートです。以下の手順でGAEへのデプロイから気象庁への登録申請方法を紹介します。
 
 ## 手順
