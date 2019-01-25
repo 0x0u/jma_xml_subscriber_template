@@ -1,36 +1,38 @@
-# jma_xml_subscriber_template
+# jmx_subscriber_template
 
 [![License](https://img.shields.io/badge/license-JMA-blue.svg)](https://www.jma.go.jp/jma/kishou/info/coment.html)
 
-FlaskとGAE(GoogleAppEngine)を使って気象庁XMLを受信するためのサブスクライバのテンプレートです。ここではテンプレートをクローンしてGAEへデプロイ、気象庁への登録申請までの手順を紹介します。
+FlaskとGAE（GoogleAppEngine）を使って気象庁防災情報XML（以下JMX）を受信するためのサブスクライバのテンプレートパッケージです。GAEでサブスクライバを運用するためのファイルがパッケージングされています。ここではテンプレートをクローンしてGAEへデプロイ、気象庁への登録申請までの手順を紹介します。
 
 ## 手順
 
-#### 1. サブスクライバ用のコードを取得する
+#### 1. パッケージをクローンする
 gitからcloneします。
 
 ```
-$ git clone https://github.com/0x0u/jma_xml_subscriber_template.git
+$ git clone https://github.com/0x0u/jmx_subscriber_template
 
-$ cd jma_xml_subscriber_template
+$ cd jmx_subscriber_template
 ```        
 
-中身は以下のようになっています。今回紹介したソースコード（main.py）とGAEにデプロイするために必要なファイル群です。
+中身は以下のようになっています。GAEにデプロイするために必要なファイル群です。
 
 ```
-jma_xml_subscriber_template
-    ├── app.yaml(GAE設定ファイル)
+jmx_subscriber_template
+    ├── app.yaml
     ├── main.py
-    ├── requirements.txt(インストールが必要な外部モジュールを書く)
-    ├── .gcloudignore(GAEにデプロイする際に除外するファイルを書く)
-    └── .gitignore
+    ├── requirements.txt
+    ├── secret.yaml
+    ├── .gitignore
+    └── .gcloudignore
 ```
 
 #### 2. VERIFY_TOKENを設定する
-jma_xml_subscriber_templateディレクトリ内でsecret.yamlを作成しhogehoge部を自分で書き換えます。これはGAEにデプロイする際に使うファイルで環境変数を指定します。main.pyのVERIFY_TOKENが取得します。
+jmx_subscriber_templateディレクトリ内でsecret.yamlのhogehoge部を自分で書き換えます。気象庁に登録申請する際に届け出るものと同じものを用意します。main.pyのVERIFY_TOKENが拾います。環境変数は全てこのファイルに記述します。
 
 ```
-VERIFY_TOKEN: "hogehoge"
+env_variables:
+  VERIFY_TOKEN: "hogehoge"
 ```
 
 #### 3. GAEにデプロイする  
@@ -41,15 +43,8 @@ $ gcloud app deploy app.yaml
 ```
 
 #### 4. 申請する
-[ユーザー登録について](http://xml.kishou.go.jp/open_trial/registration.html)に従い申請します。登録様式をダウンロードして、2で設定したVERIFY_TOKENと3でデプロイしたサブスクライバURL(https\://プロジェクトID.appspot.com/sub)、その他を記述してメールに添付して送信すれば申請完了です。
+[ユーザー登録について](http://xml.kishou.go.jp/open_trial/registration.html)に従い申請します。登録様式をダウンロードして、2で設定したVERIFY_TOKENと3でデプロイしたサブスクライバURL（https\://プロジェクトID.appspot.com/sub）、その他を記述してメールに添付して送信すれば申請完了です。
 
 
 ## 参考
-* [コンテンツ
-トップページ
-更新情報
-技術資料
-情報の取得方法(PUSH型)
-情報の取得方法(PULL型)
-参考資料集
-気象庁防災情報XMLフォーマット形式電文の公開（PUSH型）](http://xml.kishou.go.jp/open_trial/index.html)
+* [気象庁防災情報XMLフォーマット形式電文の公開（PUSH型）](http://xml.kishou.go.jp/open_trial/index.html)
