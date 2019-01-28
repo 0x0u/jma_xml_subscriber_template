@@ -2,12 +2,12 @@
 
 [![License](https://img.shields.io/badge/license-JMA-blue.svg)](https://www.jma.go.jp/jma/kishou/info/coment.html)
 
-FlaskとGAE（GoogleAppEngine）を使って気象庁防災情報XML（以下JMX）を受信するためのサブスクライバのテンプレートパッケージです。GAEでサブスクライバを運用するためのファイルがパッケージングされています。ここではテンプレートをクローンしてGAEへデプロイ、気象庁への登録申請までの手順を紹介します。
+FlaskとGAE（GoogleAppEngine）を使って気象庁防災情報XML（以下JMX）を受信するためのサブスクライバテンプレートパッケージです。GAEでサブスクライバを運用するためのファイルがパッケージングされています。ここではテンプレートをクローンしてGAEへデプロイ、気象庁への登録申請までの手順を紹介します。
 
 ## 手順
 
 #### 1. パッケージをクローンする
-gitからcloneします。
+githubからcloneします。
 
 ```
 $ git clone https://github.com/0x0u/jmx_subscriber_template

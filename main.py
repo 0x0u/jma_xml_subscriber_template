@@ -1,19 +1,11 @@
 import os
 import requests
 from bs4 import BeautifulSoup
-from flask import Flask, request, Response, abort
+from flask import Flask, request, Response
 
 app = Flask(__name__)
 
 VERIFY_TOKEN = os.environ.get('VERIFY_TOKEN')
-
-
-def get_xml(data):
-    soup1 = BeautifulSoup(data, 'lxml')
-    url = soup1.find('entry').find_all('link').get('href')
-    r = requests.get(str(url))
-    soup2 = BeautifulSoup(r.content, 'lxml')
-    return str(soup2)
 
 
 @app.route('/sub', methods=['GET'])
@@ -35,7 +27,8 @@ def get():
 @app.route('/sub', methods=['POST'])
 def post():
     data = request.data
-    get_xml(data)
+    soup = BeautifulSoup(data, 'lxml')
+    urls = [i.find('link').get('href') for i in soup.find_all('entry')]
     return Response(response='ok', status=200)
 
 if __name__ == '__main__':
