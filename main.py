@@ -34,12 +34,10 @@ def post():
         data = request.get_data(as_text=True)
         sig = 'sha1=' + hmac.new(bytes(VERIFY_TOKEN, 'UTF-8'), bytes(data, 'UTF-8'), hashlib.sha1).hexdigest()
         if sig == sha1:
-            soup = BeautifulSoup(str(data), 'lxml')
-            titles = [i.find('title').text for i in soup.find_all('entry')]
-            uuids = [re.findall('<id>urn:uuid:(.+)</id>' ,str(i.find('id')))[0] for i in soup.find_all('entry')]
-            urls = [i.find('link').get('href') for i in soup.find_all('entry')]
-            for title, uuid, url in zip(titles, uuids, urls):
-                pass
+
+            # 処理を書く
+            # POSTされたAtomはdataに入っているのでBeautifulSoupなどでXMLをパースして遊ぶ
+
             return Response(response='ok', status=200)
         else:
             return Response(response='Bad request!', status=404)
