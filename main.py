@@ -10,7 +10,6 @@ app = Flask(__name__)
 
 VERIFY_TOKEN = os.environ.get('VERIFY_TOKEN')
 
-
 @app.route('/sub', methods=['GET'])
 def get():
     verify_token = request.args.get('hub.verify_token')
@@ -45,4 +44,4 @@ def post():
         return Response(response='Bad request!', status=404)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080, threaded=True)
+    app.run(threaded=True)
