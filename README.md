@@ -28,7 +28,7 @@ jmx_subscriber_template
 ```
 
 ### 2. VERIFY_TOKENを設定する
-jmx_subscriber_templateディレクトリ内でsecret.yamlのhogehoge部を自分で書き換えます。気象庁に登録申請する際に届け出るものと同じものを用意します。これはmain.pyのVERIFY_TOKENが拾います。環境変数は全てこのファイルに記述します。
+送られてきたデータが真に気象庁からかどうかを判断するためのVERIFY_TOKENを設定します。jmx_subscriber_templateディレクトリ内でsecret.yamlのhogehoge部を自分で書き換えます。気象庁に登録申請する際に届け出るものと同じものを用意します。これはmain.pyのVERIFY_TOKENが拾います。環境変数は全てこのファイルに記述します。
 
 ```
 env_variables:
@@ -43,7 +43,11 @@ $ gcloud app deploy app.yaml
 ```
 
 ### 4. 申請する
-[ユーザー登録について](http://xml.kishou.go.jp/open_trial/registration.html)に従い申請します。登録様式をダウンロードして、2で設定したVERIFY_TOKENと3でデプロイしたサブスクライバURL（https\://プロジェクトID.appspot.com/sub）、その他を記述してメールに添付して送信すれば申請完了です。下記に私が実際に申請した際の登録様式を少し改変して載せておきました。
+[ユーザー登録について](http://xml.kishou.go.jp/open_trial/registration.html)に従い申請します。登録様式をダウンロードして、2で設定したVERIFY_TOKENと3でデプロイしたサブスクライバのURL（https\://プロジェクトID.appspot.com/sub）、その他を記述してメールに添付して送信すれば申請完了です。 なりすましや、サーバーへの負荷対策のためにもVERIFY_TOKENとサブスクライバのURLは他人に知らせないように気をつけましょう。
+
+下記に私が実際に申請した際の登録様式を少し改変して載せておきました。
+
+
 
 登録様式例
 
@@ -96,3 +100,4 @@ cdcdcdgdfasdf
 
 ## 参考
 * [気象庁防災情報XMLフォーマット形式電文の公開（PUSH型）](http://xml.kishou.go.jp/open_trial/index.html)
+
