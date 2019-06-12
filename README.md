@@ -20,6 +20,7 @@ $ cd jmx_subscriber_template
 ```
 jmx_subscriber_template
     ├── app.yaml・・・gaeの設定
+    ├── checklist.txt・・・登録様式例
     ├── main.py・・・サブスクライバ本体
     ├── requirements.txt・・・サブスクライバの依存パッケージ
     ├── secret.yaml・・・環境変数
@@ -43,11 +44,9 @@ $ gcloud app deploy app.yaml
 ```
 
 ### 4. 申請する
-[ユーザー登録について](http://xml.kishou.go.jp/open_trial/registration.html)に従い申請します。登録様式をダウンロードして、2で設定したVERIFY_TOKENと3でデプロイしたサブスクライバのURL（https\://プロジェクトID.appspot.com/sub）、その他を記述してメールに添付して送信すれば申請完了です。 なりすましや、サーバーへの負荷対策のためにもVERIFY_TOKENとサブスクライバのURLは他人に知らせないように気をつけましょう。
+[ユーザー登録について](http://xml.kishou.go.jp/open_trial/registration.html)に従い気象庁に申請します。登録様式をダウンロードして、2で設定したVERIFY_TOKENと3でデプロイしたサブスクライバのURL（https\://プロジェクトID.appspot.com/sub）、その他を記述してメールに添付して送信すれば申請完了です。 なりすましや、サーバーへの負荷対策のためにもVERIFY_TOKENとサブスクライバのURLは他人に知らせないように気をつけましょう。
 
 下記に私が実際に申請した際の登録様式を少し改変して載せておきました。
-
-
 
 登録様式例
 
