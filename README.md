@@ -19,12 +19,12 @@ $ cd jmx_subscriber_template
 
 ```
 jmx_subscriber_template
-    ├── app.yaml
-    ├── main.py
-    ├── requirements.txt
-    ├── secret.yaml
-    ├── .gitignore
-    └── .gcloudignore
+    ├── app.yaml・・・gaeの設定
+    ├── main.py・・・サブスクライバ本体
+    ├── requirements.txt・・・サブスクライバの依存パッケージ
+    ├── secret.yaml・・・環境変数
+    ├── .gitignore・・・gitのトラッキング対象外
+    └── .gcloudignore・・・GAEにデプロイする際に除外するファイル
 ```
 
 ### 2. VERIFY_TOKENを設定する
@@ -36,7 +36,7 @@ env_variables:
 ```
 
 ### 3. GAEにデプロイする  
-gcloudコマンドを実行できるようにしておきましょう。以下のコマンドでデプロイします。
+gcloudコマンドを実行できるようにしておきましょう。以下のコマンドでデプロイします。基本的にsecret.yaml以外のファイルを弄らないでデプロイできるようになっています。
 
 ```
 $ gcloud app deploy app.yaml
