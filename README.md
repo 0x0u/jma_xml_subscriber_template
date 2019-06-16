@@ -15,7 +15,7 @@ $ git clone https://github.com/0x0u/jmx_subscriber_template
 $ cd jmx_subscriber_template
 ```        
 
-中身は以下のようになっています。GAEにデプロイするために必要なファイル群です。
+中身はGAEにデプロイするために必要なファイル群です。
 
 ```
 jmx_subscriber_template
