@@ -4,7 +4,7 @@
 
 FlaskとGAE（GoogleAppEngine）を使って気象庁防災情報XML（以下JMX）を受信するためのサブスクライバテンプレートパッケージです。GAEでサブスクライバを運用するためのファイルがパッケージングされています。ここではテンプレートをクローンしてGAEへデプロイ、気象庁への登録申請までの手順を紹介します。
 
-JMX_subscriber構築についてはQiitaに投稿した記事を御覧ください。[Flask + GAEで気象庁防災情報XMLを受信する](https://qiita.com/0x0/items/4f5319bb043551b4e505)
+jmx_subscriber構築についてはQiitaに投稿した記事を御覧ください。[Flask + GAEで気象庁防災情報XMLを受信する](https://qiita.com/0x0/items/4f5319bb043551b4e505)
 
 ## 手順
 
