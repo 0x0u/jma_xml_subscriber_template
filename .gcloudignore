@@ -1,7 +1,6 @@
-.gcloudignore
 .git
 .gitignore
+.gcloudignore
+
 README.md
-__pycache__/
-/setup.cfg
 checklist.txt
