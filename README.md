@@ -4,6 +4,8 @@
 
 FlaskとGAE（GoogleAppEngine）を使って気象庁防災情報XML（以下JMX）を受信するためのサブスクライバテンプレートパッケージです。GAEでサブスクライバを運用するためのファイルがパッケージングされています。ここではテンプレートをクローンしてGAEへデプロイ、気象庁への登録申請までの手順を紹介します。
 
+jmx_subscriber構築についてはQiitaに投稿した記事を御覧ください。[Flask + GAEで気象庁防災情報XMLを受信する](https://qiita.com/0x0/items/4f5319bb043551b4e505)
+
 ## 手順
 
 ### 1. パッケージをクローンする
@@ -15,7 +17,7 @@ $ git clone https://github.com/0x0u/jmx_subscriber_template
 $ cd jmx_subscriber_template
 ```        
 
-中身は以下のようになっています。GAEにデプロイするために必要なファイル群です。
+中身はGAEにデプロイするために必要なファイル群です。
 
 ```
 jmx_subscriber_template
@@ -44,7 +46,7 @@ $ gcloud app deploy app.yaml
 ```
 
 ### 4. 申請する
-[ユーザー登録について](http://xml.kishou.go.jp/open_trial/registration.html)に従い気象庁に申請します。登録様式をダウンロードして、2で設定したVERIFY_TOKENと3でデプロイしたサブスクライバのURL（https\://プロジェクトID.appspot.com/sub）、その他を記述してメールに添付して送信すれば申請完了です。 なりすましや、サーバーへの負荷対策のためにもVERIFY_TOKENとサブスクライバのURLは他人に知らせないように気をつけましょう。
+[ユーザー登録について](http://xml.kishou.go.jp/open_trial/registration.html)に従い気象庁に申請します。登録様式をダウンロードして、2で設定したVERIFY_TOKENと3でデプロイしたサブスクライバのURL（https\://[YOUR_PROJECT_ID].appspot.com/sub）、その他を記述してメールに添付して送信すれば申請完了です。 なりすましや、サーバーへの負荷対策のためにもVERIFY_TOKENとサブスクライバのURLは他人に知らせないように気をつけましょう。
 
 下記に私が実際に申請した際の登録様式を少し改変して載せておきました。
 
@@ -77,13 +79,13 @@ $ gcloud app deploy app.yaml
 上記チェックリストの各項について確認、承諾の上、以下の通り登録を申し込みます。
 
 [1]連絡先電子メールアドレス
-hogehoge6@gmail.com
+hogehoge@gmail.com
 
 [2]subscriberのエンドポイントURL
-https://hogehoge.appspot.com/sub
+https://[YOUR_PROJECT_ID].appspot.com/sub
 
 [3]verify.tokenの登録を希望する場合はtokenを記載
-cdcdcdgdfasdf
+ivfi9vfks_sd3s
 
 [4]登録を希望するatomフィードの分類種別
 　（選択した種別の「□」を「■」に書き換えてください。複数でも問題ありません。
