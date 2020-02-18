@@ -4,8 +4,8 @@ import hashlib
 from flask import Flask, request, Response
 
 app = Flask(__name__)
-
 VERIFY_TOKEN = os.environ.get('VERIFY_TOKEN')
+
 
 @app.route('/sub', methods=['GET'])
 def get():
@@ -19,14 +19,15 @@ def get():
             r.headers['Content-Type'] = 'text/plain'
             return r
         else:
-            return  Response('Bad request!', 404)
+            return Response('Bad request!', 404)
     else:
         return Response('Bad request!', 404)
+
 
 @app.route('/sub', methods=['POST'])
 def post():
     sha1 = request.headers.get('X-Hub-Signature')
-    if sha1 != None:
+    if sha1:
         data = request.get_data(as_text=True)
         sig = 'sha1=' + hmac.new(bytes(VERIFY_TOKEN, 'UTF-8'), bytes(data, 'UTF-8'), hashlib.sha1).hexdigest()
         if sig == sha1:
@@ -39,6 +40,7 @@ def post():
             return Response(response='Bad request!', status=404)
     else:
         return Response(response='Bad request!', status=404)
+
 
 if __name__ == '__main__':
     app.run(threaded=True)
