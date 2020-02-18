@@ -1,9 +1,6 @@
 import os
-import re
 import hmac
 import hashlib
-import requests
-from bs4 import BeautifulSoup
 from flask import Flask, request, Response
 
 app = Flask(__name__)
