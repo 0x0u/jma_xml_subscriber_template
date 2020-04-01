@@ -28,8 +28,7 @@ def get():
 def post():
     signature = request.headers["X-Hub-Signature"]
     body = request.get_data(as_text=True)
-    hash_ = "sha1=" + hmac.new(bytes(VERIFY_TOKEN, "UTF-8"),
-                               bytes(body, "UTF-8"), hashlib.sha1).hexdigest()
+    hash_ = "sha1=" + hmac.new(bytes(VERIFY_TOKEN, "UTF-8"), bytes(body, "UTF-8"), hashlib.sha1).hexdigest()
     if signature == hash_:
 
         # 処理を書く
