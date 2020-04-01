@@ -12,7 +12,7 @@ jmx_subscriber構築についてはQiitaに投稿した記事を御覧くださ�
 githubからcloneします。
 
 ```
-$ git clone https://github.com/0x0u/jmx_subscriber_template
+$ git clone https://github.com/miya/jmx_subscriber_template
 
 $ cd jmx_subscriber_template
 ```        
