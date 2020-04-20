@@ -10,7 +10,7 @@ FlaskとGAE（GoogleAppEngine）を使って気象庁防災情報XMLを受信す
 githubからcloneします。
 
 ```
-$ git clone https://github.com/0x0u/jmx_subscriber_template
+$ git clone https://github.com/miya/jmx_subscriber_template
 
 $ cd jmx_subscriber_template
 ```        
