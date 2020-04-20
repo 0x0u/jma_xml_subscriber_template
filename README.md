@@ -1,5 +1,7 @@
 # jmx_subscriber_template
 
+[![License](http://img.shields.io/badge/license-mit-blue.svg?style=flat)](https://github.com/miya/jmx_subscriber_template/blob/master/LICENSE)
+
 FlaskとGAE（GoogleAppEngine）を使って気象庁防災情報XMLを受信するためのサブスクライバを構築するパッケージです。GAEでサブスクライバを運用するためのファイルがパッケージングされています。リポジトリのクローンからGAEへのデプロイまでの手順を紹介します。
 
 [気象庁防災情報XMLフォーマット形式電文の公開（PUSH型）](http://xml.kishou.go.jp/open_trial/index.html)
