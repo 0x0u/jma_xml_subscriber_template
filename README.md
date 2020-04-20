@@ -1,13 +1,11 @@
 # jmx_subscriber_template
 
-[![License](https://img.shields.io/badge/license-JMA-blue.svg)](https://www.jma.go.jp/jma/kishou/info/coment.html)
+FlaskとGAE（GoogleAppEngine）を使って気象庁防災情報XMLを受信するためのサブスクライバを構築するパッケージです。GAEでサブスクライバを運用するためのファイルがパッケージングされています。リポジトリのクローンからGAEへのデプロイまでの手順を紹介します。
 
-FlaskとGAE（GoogleAppEngine）を使って気象庁防災情報XML（以下JMX）を受信するためのサブスクライバテンプレートパッケージです。GAEでサブスクライバを運用するためのファイルがパッケージングされています。ここではテンプレートをクローンしてGAEへデプロイ、気象庁への登録申請までの手順を紹介します。
+[気象庁防災情報XMLフォーマット形式電文の公開（PUSH型）](http://xml.kishou.go.jp/open_trial/index.html)
 
-jmx_subscriber構築についてはQiitaに投稿した記事を御覧ください。[Flask + GAEで気象庁防災情報XMLを受信する](https://qiita.com/0x0/items/4f5319bb043551b4e505)
 
-## 手順
-
+##  手順
 ### 1. パッケージをクローンする
 githubからcloneします。
 
@@ -31,7 +29,7 @@ jmx_subscriber_template
 ```
 
 ### 2. VERIFY_TOKENを設定する
-送られてきたデータが真に気象庁からかどうかを判断するためのVERIFY_TOKENを設定します。jmx_subscriber_templateディレクトリ内でsecret.yamlのhogehoge部を自分で書き換えます。気象庁に登録申請する際に届け出るものと同じものを用意します。これはmain.pyのVERIFY_TOKENが拾います。環境変数は全てこのファイルに記述します。
+送られてきたデータが真に気象庁からかどうかを判断するための`VERIFY_TOKEN`を設定します。jmx_subscriber_templateディレクトリ内で`secret.yaml`の`hogehoge`部を自分で書き換えます。気象庁に登録申請する際に届け出るものと同じものを用意します。これはmain.pyのVERIFY_TOKENが拾います。環境変数は全てこのファイルに記述します。
 
 ```
 env_variables:
@@ -39,14 +37,14 @@ env_variables:
 ```
 
 ### 3. GAEにデプロイする  
-gcloudコマンドを実行できるようにしておきましょう。以下のコマンドでデプロイします。基本的にsecret.yaml以外のファイルを弄らないでデプロイできるようになっています。
+gcloudコマンドを実行できるようにしておきましょう。以下のコマンドでデプロイします。secret.yaml以外のファイルを弄らないでデプロイできるようになっています。
 
 ```
 $ gcloud app deploy app.yaml
 ```
 
 ### 4. 申請する
-[ユーザー登録について](http://xml.kishou.go.jp/open_trial/registration.html)に従い気象庁に申請します。登録様式をダウンロードして、2で設定したVERIFY_TOKENと3でデプロイしたサブスクライバのURL（https\://[YOUR_PROJECT_ID].appspot.com/sub）、その他を記述してメールに添付して送信すれば申請完了です。 なりすましや、サーバーへの負荷対策のためにもVERIFY_TOKENとサブスクライバのURLは他人に知らせないように気をつけましょう。
+[ユーザー登録について](http://xml.kishou.go.jp/open_trial/registration.html) に従い気象庁に申請します。登録様式をダウンロードして、2で設定したVERIFY_TOKENと3でデプロイしたサブスクライバのURL（https\://[YOUR_PROJECT_ID].appspot.com/sub）、その他を記述してメールに添付して送信すれば申請完了です。 なりすましや、サーバーへの負荷対策のためにもVERIFY_TOKENとサブスクライバのURLは他人に知らせないように気をつけましょう。
 
 下記に私が実際に申請した際の登録様式を少し改変して載せておきました。
 
@@ -98,7 +96,4 @@ ivfi9vfks_sd3s
 [5]記入年月日
 　平成31年1月23日
 ```
-
-## 参考
-* [気象庁防災情報XMLフォーマット形式電文の公開（PUSH型）](http://xml.kishou.go.jp/open_trial/index.html)
 
